@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   Rocket, Navigation, Globe2, ChevronDown, 
@@ -6,7 +5,8 @@ import {
   Anchor, Compass, ShoppingCart, ChevronRight,
   ShieldCheck, BarChart3, Presentation, Heart,
   Flame, Target, Settings, BrainCircuit, Activity, Layers,
-  Smile, Quote, MapPin, Award, Mail, Briefcase
+  Smile, Quote, MapPin, Award, Mail, Briefcase,
+  Terminal, BarChart, Globe
 } from 'lucide-react';
 
 // --- Sub-components ---
@@ -55,8 +55,8 @@ export default function App() {
       color: 'blue', 
       icon: <Anchor />,
       details: [
-        '負責 20 萬噸級 LNG 船之航行安全、貨物裝卸作業監控與風險控管。',
-        '於跨國團隊中建立標準化操作流程 (SOP)，確保全球供應鏈極限環境下的零失誤營運。',
+        '負責 10 萬多噸級 LNG 船之航行安全、貨物裝卸作業監控與風險控管。',
+        '於跨文化與資源受限環境中，確保標準流程 (SOP)真正落地生根。',
         '具備國際海事法規、跨國溝通協作與高壓力環境決策能力。'
       ]
     },
@@ -67,9 +67,9 @@ export default function App() {
       color: 'emerald', 
       icon: <ShoppingCart />,
       details: [
-        '主導全台電商平台營運，優化端到端供應鏈效率，達成顯著的業績成長目標。',
-        '建立數位化績效追蹤體系，將繁雜的零售數據轉化為可執行之商業決策。',
-        '負責跨部門溝通標準化，提升物流、行銷與技術團隊之協作動能。'
+        '負責官方網站整體營運，建立數位行銷、內容產出與營運標準化流程。',
+        '管理商品生命週期與平台效能，顯著提升營運效率與轉換率。',
+        '數位化績效追蹤體系，將繁雜的零售數據轉化為可執行之商業決策。'
       ]
     },
     { 
@@ -84,14 +84,67 @@ export default function App() {
       ]
     },
     { 
-      role: '顧問 / 產品經理', 
-      org: 'Eland Tech / ezTravel', 
-      date: '2002 - 2008', 
+      role: '顧問', 
+      org: '意藍科技 (Eland Tech)', 
+      date: '2006 - 2008', 
       color: 'slate', 
       icon: <Briefcase />,
       details: [
-        '負責產品規劃、技術文件編寫與跨部門專案管理。',
-        '優化旅遊搜尋引擎邏輯，提升大規模數據查詢效率與準確度。'
+        '協助市場開發、客製化系統規劃與編寫產品技術文件。'
+      ]
+    },
+    { 
+      role: '產品經理', 
+      org: 'ezTravel (易遊網)', 
+      date: '2002 - 2006', 
+      color: 'blue', 
+      icon: <Presentation />,
+      details: [
+        '負責旅遊產品線開發與銷售策略。',
+        '導入 ERP 系統，優化團隊協作效能並提升產能。',
+        '長期與政府共辦觀光活動，提供總經理產業分析與輿情。'
+      ]
+    }
+  ];
+
+  const impactProjects = [
+    {
+      country: 'Kyrgyzstan',
+      title: '吉爾吉斯計畫',
+      tagline: '將「標準化 × 以人為本 × 效率」轉化為在地服務的具體行動。',
+      description: '我不只是去執行任務，更是去傳遞工具。透過「陪同實作」，將專業經驗轉化為在地團隊可持續操作的資產。',
+      color: 'amber',
+      icon: <Smile />,
+      actions: [
+        { title: '品牌敘事與數位資產', desc: '將在地特色轉化為具吸引力的品牌故事，建立行銷素材庫。' },
+        { title: '數位優化與流程活化', desc: '協助文史數位化與品牌活化，建立在地內容產出流程。' },
+        { title: '數位 SOP 與文化傳承', desc: '建立易於維護的數位指南，確保營運流程能持續運作。' }
+      ]
+    },
+    {
+      country: 'Belize',
+      title: '貝里斯計畫',
+      tagline: '將「需求轉譯 × 數據賦能 × 知識留存」轉化為減輕團隊負擔的後勤支援。',
+      description: '擔任業務端與技術端的橋樑 (RA Support)，將模糊需求轉化為清晰的功能規格 (Functional Specs)，減少開發溝通成本。',
+      color: 'emerald',
+      icon: <Terminal />,
+      actions: [
+        { title: '需求轉譯 RA Support', desc: '將模糊需求轉化為清晰功能規格，極小化溝通與開發成本。' },
+        { title: '數據賦能 Dashboard', desc: '協同建置自動化儀表板，將營運數據轉化為透明可視的決策工具。' },
+        { title: '知識留存與 SOP', desc: '撰寫使用者手冊與 SOP，確保系統知識不因人員異動而斷層。' }
+      ]
+    },
+    {
+      country: 'Indonesia',
+      title: '印尼計畫',
+      tagline: '將「市場利基 × 文化敘事 × 商業落地」轉化為社區產業的實質成長動能。',
+      description: '結合 Google Trends 數據洞察與田野訪談，協助社區挖掘產品的差異化優勢，建立可持續獲利的行銷模式。',
+      color: 'blue',
+      icon: <Globe />,
+      actions: [
+        { title: '市場洞察 Niche Market', desc: '結合數據與田野訪談，挖掘產品差異化優勢，鎖定高價值市場。' },
+        { title: '文化敘事 Brand Assets', desc: '透過「故事採集」將在地文化轉化為具感染力的品牌資產。' },
+        { title: '商業落地 Sustainability', desc: '導入跨國成功案例，建立可持續獲利的行銷與營運模式。' }
       ]
     }
   ];
@@ -106,15 +159,15 @@ export default function App() {
     },
     {
       label: 'Shopping.',
-      title: 'The Scaling Expert · 規模化營運者',
-      desc: '於大型零售電商建立可擴充的 SOP。我專注於「可複製的成功」，讓系統成為支撐業務高速成長的最堅實底層。',
+      title: 'The Empowering Partner · 賦能型協作者',
+      desc: '於大型零售電商建立可擴充的 SOP。我專注於「可複製的成功」，讓系統成為支撐組織穩定運作與知識傳承的根基。',
       color: 'emerald',
       letter: 'o'
     },
     {
       label: 'Shipping.',
       title: 'The Performer · 海上實踐者',
-      desc: '於極限環境執行任務，重視紀律與精確度。在 20 萬噸級 LNG 船上，清楚的架構是守護營運安全的唯一防線。',
+      desc: '於極限環境執行任務，重視紀律與精確度。在 10 萬多噸級 LNG 船上，清楚的架構是守護營運安全的唯一防線。',
       color: 'blue',
       letter: 'i'
     }
@@ -171,10 +224,10 @@ export default function App() {
             <div className="reveal-item space-y-6 md:space-y-8 max-w-xl mb-12 md:mb-16">
               <p className="text-xl md:text-3xl font-black text-zinc-800 leading-[1.2] tracking-tight">
                 二十年跨界實踐，橫跨數位新創、大型零售與國際航運，<br className="hidden md:block"/>
-                專注於建立可規模化的全球營運體系。
+                專注於將營運經驗轉化為在地可持續運作的制度與流程。
               </p>
               <p className="text-zinc-500 font-medium text-base md:text-lg leading-relaxed border-l-4 border-amber-500 pl-5 md:pl-6 py-1 md:py-2">
-                我致力於透過系統化架構解決複雜問題。無論是在 LNG 船執行零容錯任務，或是主導電商平台之營運轉型，核心始終在於將「效率」轉化為穩定的「專業影響力」。
+                我致力於透過系統化架構解決複雜問題。透過協作，協助組織進行數位優化與技術移轉，核心始終在於將「效率」轉化為穩定的「專業影響力」。
               </p>
             </div>
             
@@ -229,7 +282,6 @@ export default function App() {
           <div className="grid grid-cols-1 gap-16 md:gap-32 mt-12 md:mt-20">
             {pillarData.map((item, idx) => (
               <div key={idx} className="reveal-item group flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-20 max-w-6xl relative">
-                {/* Word Branding */}
                 <div className="relative shrink-0">
                    <h3 className="text-5xl md:text-8xl font-black text-zinc-900 tracking-tighter leading-none relative z-10">
                     Sh<span className={
@@ -239,7 +291,6 @@ export default function App() {
                   </h3>
                 </div>
 
-                {/* Content */}
                 <div className="flex-1 space-y-4 md:space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className={`h-[2px] w-8 md:w-12 ${
@@ -281,7 +332,7 @@ export default function App() {
                         item.color === 'emerald' ? 'bg-emerald-500' :
                         item.color === 'slate' ? 'bg-slate-500' : 'bg-amber-500'
                       } text-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg border-4 border-white mb-0 md:mb-6`}>
-                        {React.cloneElement(item.icon as React.ReactElement, { className: "w-8 h-8", strokeWidth: 2.5 })}
+                        {React.cloneElement(item.icon as React.ReactElement<any>, { className: "w-8 h-8", strokeWidth: 2.5 })}
                       </div>
 
                       <div className="max-w-md">
@@ -319,52 +370,51 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           <SectionHeader 
             title="I can" 
-            subtitle="吉爾吉斯計畫：將「標準化 × 以人為本 × 效率」轉化為在地服務的具體行動。"
+            subtitle="將專業知識與營運經驗轉化為在地團隊可持續操作的資產。"
             dark
             annotation="Impact Strategy"
           />
           
-          <div className="reveal-item bg-amber-500 rounded-[3rem] md:rounded-[5rem] px-6 py-12 md:p-24 text-zinc-900 overflow-hidden relative group shadow-[0_30px_60px_-10px_rgba(245,158,11,0.25)]">
-            <div className="absolute top-0 right-0 p-8 md:p-16 opacity-5 group-hover:rotate-12 transition-transform duration-1000">
-              <Smile className="w-64 h-64 md:w-[400px] md:h-[400px]" strokeWidth={1} />
-            </div>
-            
-            <div className="relative z-10">
-              <div className="max-w-5xl mb-12 md:mb-16">
-                <h3 className="text-4xl md:text-8xl font-black tracking-tighter leading-[1] mb-8 md:mb-12">
-                  我可以為計畫<br className="hidden md:block"/>帶來什麼價值？
-                </h3>
-                <p className="text-lg md:text-2xl font-bold opacity-80 leading-relaxed italic border-l-4 border-zinc-900 pl-4 md:pl-6 py-1 md:py-2">
-                  我不只是去執行任務，更是去傳遞工具。讓專業經驗轉化為在地團隊可持續運作的數位資產。
-                </p>
-              </div>
-
-              <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
-                {[
-                  { 
-                    title: '品牌敘事與數位資產', 
-                    desc: '將家扶小舖的在地特色轉化為具吸引力的品牌故事，並建立結構化的行銷素材庫。'
-                  },
-                  { 
-                    title: '平台整合與流量轉化', 
-                    desc: '將內容與商品套用至 FB、IG 與 Pinkoi 等平台，引導流量導向支持官網，建立透明的捐助連結。'
-                  },
-                  { 
-                    title: '數位 SOP 與文化傳承', 
-                    desc: '建立易於維護的數位指南，確保即使在人員更迭下，計畫的核心價值與營運流程也能持續運作。'
-                  }
-                ].map((plan, pIdx) => (
-                  <div key={pIdx} className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[4rem] border border-white/40 shadow-xl hover:translate-y-[-5px] transition-all duration-700 group/card flex flex-col justify-center">
-                    <h4 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 tracking-tight text-zinc-900 leading-tight">
-                      {plan.title}
-                    </h4>
-                    <p className="text-base md:text-lg font-medium leading-relaxed text-zinc-500 group-hover/card:text-zinc-800 transition-colors">
-                      {plan.desc}
-                    </p>
+          <div className="grid gap-20 md:gap-32">
+            {impactProjects.map((project, idx) => (
+              <div key={idx} className={`reveal-item ${
+                project.color === 'amber' ? 'bg-amber-500' : 
+                project.color === 'emerald' ? 'bg-emerald-500' : 'bg-blue-600'
+              } rounded-[3rem] md:rounded-[5rem] px-6 py-12 md:p-24 text-zinc-900 overflow-hidden relative group shadow-2xl`}>
+                <div className="absolute top-0 right-0 p-8 md:p-16 opacity-5 group-hover:rotate-12 transition-transform duration-1000">
+                  {React.cloneElement(project.icon as React.ReactElement<any>, { className: "w-64 h-64 md:w-[400px] md:h-[400px]", strokeWidth: 1 })}
+                </div>
+                
+                <div className="relative z-10">
+                  <div className="max-w-5xl mb-12 md:mb-16">
+                    <h3 className="text-4xl md:text-8xl font-black tracking-tighter leading-[1] mb-8 md:mb-12">
+                      {project.title}
+                    </h3>
+                    <div className="space-y-6">
+                      <p className="text-xl md:text-3xl font-black opacity-90 leading-tight">
+                        {project.tagline}
+                      </p>
+                      <p className="text-lg md:text-2xl font-bold opacity-80 leading-relaxed italic border-l-4 border-zinc-900 pl-4 md:pl-6 py-1 md:py-2">
+                        {project.description}
+                      </p>
+                    </div>
                   </div>
-                ))}
+
+                  <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
+                    {project.actions.map((action, aIdx) => (
+                      <div key={aIdx} className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[4rem] border border-white/40 shadow-xl hover:translate-y-[-5px] transition-all duration-700 group/card flex flex-col">
+                        <h4 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 tracking-tight text-zinc-900 leading-tight">
+                          {action.title}
+                        </h4>
+                        <p className="text-base md:text-lg font-medium leading-relaxed text-zinc-500 group-hover/card:text-zinc-800 transition-colors">
+                          {action.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -414,7 +464,7 @@ export default function App() {
             <p className="text-zinc-400 text-[9px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em]">© 2024. ALL SYSTEMS READY.</p>
           </div>
           <div className="flex items-center space-x-6 md:space-x-8 text-center md:text-right text-[10px] md:text-xs font-black uppercase tracking-widest text-zinc-400">
-             <span>Professional Folio v5.0</span>
+             <span>Professional Folio v5.1</span>
              <span className="h-1 w-1 bg-amber-500 rounded-full"></span>
              <span>Taiwan Based</span>
           </div>
