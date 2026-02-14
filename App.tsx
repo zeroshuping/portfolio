@@ -56,7 +56,7 @@ export default function App() {
       icon: <Anchor />,
       details: [
         '負責 10 萬多噸級 LNG 船之航行安全、貨物裝卸作業監控與風險控管。',
-        '於跨文化與資源受限環境中，確保標準流程 (SOP)真正落地生根。',
+        '於跨文化與資源受限環境中,確保標準流程 (SOP)真正落地生根。',
         '具備國際海事法規、跨國溝通協作與高壓力環境決策能力。'
       ]
     },
@@ -67,9 +67,9 @@ export default function App() {
       color: 'emerald', 
       icon: <ShoppingCart />,
       details: [
-        '負責官方網站整體營運，建立數位行銷、內容產出與營運標準化流程。',
-        '管理商品生命週期與平台效能，顯著提升營運效率與轉換率。',
-        '數位化績效追蹤體系，將繁雜的零售數據轉化為可執行之商業決策。'
+        '負責官方網站整體營運,建立數位行銷、內容產出與營運標準化流程。',
+        '管理商品生命週期與平台效能,顯著提升營運效率與轉換率。',
+        '數位化績效追蹤體系,將繁雜的零售數據轉化為可執行之商業決策。'
       ]
     },
     { 
@@ -79,8 +79,8 @@ export default function App() {
       color: 'amber', 
       icon: <Rocket />,
       details: [
-        '從 0 到 1 打造全台領先的旅遊搜尋服務，橫跨產品規劃、技術研發與市場商務擴展。',
-        '建立橫跨技術、產品與營運的溝通橋樑，落實使用者導向之數位轉型策略。'
+        '從 0 到 1 打造全台領先的旅遊搜尋服務,橫跨產品規劃、技術研發與市場商務擴展。',
+        '建立橫跨技術、產品與營運的溝通橋樑,落實使用者導向之數位轉型策略。'
       ]
     },
     { 
@@ -101,8 +101,8 @@ export default function App() {
       icon: <Presentation />,
       details: [
         '負責旅遊產品線開發與銷售策略。',
-        '導入 ERP 系統，優化團隊協作效能並提升產能。',
-        '長期與政府共辦觀光活動，提供總經理產業分析與輿情。'
+        '導入 ERP 系統,優化團隊協作效能並提升產能。',
+        '長期與政府共辦觀光活動,提供總經理產業分析與輿情。'
       ]
     }
   ];
@@ -111,40 +111,41 @@ export default function App() {
     {
       country: 'Kyrgyzstan',
       title: '吉爾吉斯計畫',
-      tagline: '將「標準化 × 以人為本 × 效率」轉化為在地服務的具體行動。',
-      description: '我不只是去執行任務，更是去傳遞工具。透過「陪同實作」，將專業經驗轉化為在地團隊可持續操作的資產。',
+      tagline: '數位行銷與文獻保存',
+      description: '將「標準化 × 以人為本 × 效率」轉化為在地服務的具體行動',
       color: 'amber',
       icon: <Smile />,
       actions: [
-        { title: '品牌敘事與數位資產', desc: '將在地特色轉化為具吸引力的品牌故事，建立行銷素材庫。' },
-        { title: '數位優化與流程活化', desc: '協助文史數位化與品牌活化，建立在地內容產出流程。' },
-        { title: '數位 SOP 與文化傳承', desc: '建立易於維護的數位指南，確保營運流程能持續運作。' }
+        { title: '文獻數位化與歸檔', desc: '運用 NotebookLM 與 OCR 技術，協助在地文史資料數位資產化，建立易維護的分類邏輯與雲端結構。' },
+        { title: '品牌故事與 Canva 賦能', desc: '建立品牌視覺庫,可重複使用版型與內容公式，降低行銷門檻，確保「家扶小舖」品牌產出一致性。' },
+        { title: '社群經營與自主管理', desc: '使用 Meta Business Suite 建立排程與數據追蹤。透過陪同實作建立營運 SOP，賦能團隊獨立運作能力。' },
+        { title: '虛實整合 (O2O) 策展策略', desc: '發揮 Costco O2O 整合經驗，規劃實體展，將 15 週年史料轉化為社群故事，流量導引至產品購買。' }
       ]
     },
     {
       country: 'Belize',
       title: '貝里斯計畫',
-      tagline: '將「需求轉譯 × 數據賦能 × 知識留存」轉化為減輕團隊負擔的後勤支援。',
-      description: '擔任業務端與技術端的橋樑 (RA Support)，將模糊需求轉化為清晰的功能規格 (Functional Specs)，減少開發溝通成本。',
+      tagline: '決策支援與數據優化 。',
+      description: '將「需求轉譯 × 數據賦能 × 知識留存」轉化為減輕團隊負擔的後勤支援。。',
       color: 'emerald',
       icon: <Terminal />,
       actions: [
-        { title: '需求轉譯 RA Support', desc: '將模糊需求轉化為清晰功能規格，極小化溝通與開發成本。' },
-        { title: '數據賦能 Dashboard', desc: '協同建置自動化儀表板，將營運數據轉化為透明可視的決策工具。' },
-        { title: '知識留存與 SOP', desc: '撰寫使用者手冊與 SOP，確保系統知識不因人員異動而斷層。' }
+        { title: '需求轉譯 RA Support', desc: '將模糊需求轉化為清晰功能規格,極小化溝通與開發成本。' },
+        { title: '數據賦能 Dashboard', desc: '協同建置自動化儀表板,將營運數據轉化為透明可視的決策工具。' },
+        { title: '知識留存與 SOP', desc: '撰寫使用者手冊與 SOP,確保系統知識不因人員異動而斷層。' }
       ]
     },
     {
       country: 'Indonesia',
       title: '印尼計畫',
-      tagline: '將「市場利基 × 文化敘事 × 商業落地」轉化為社區產業的實質成長動能。',
-      description: '結合 Google Trends 數據洞察與田野訪談，協助社區挖掘產品的差異化優勢，建立可持續獲利的行銷模式。',
+      tagline: '市場策略與品牌發展。',
+      description: '將「利基挖掘 × 標竿學習 × 提案優化」轉化為社區產業的實質成長動能。',
       color: 'blue',
       icon: <Globe />,
       actions: [
-        { title: '市場洞察 Niche Market', desc: '結合數據與田野訪談，挖掘產品差異化優勢，鎖定高價值市場。' },
-        { title: '文化敘事 Brand Assets', desc: '透過「故事採集」將在地文化轉化為具感染力的品牌資產。' },
-        { title: '商業落地 Sustainability', desc: '導入跨國成功案例，建立可持續獲利的行銷與營運模式。' }
+        { title: '利基挖掘', desc: '透過數據與Google Trends分析，協助找出產品的差異化競爭優勢。' },
+        { title: '跨國標竿學習', desc: '研究在其他國家分會的成功社區營造案例，進行 「在地化 」 改良應用。' },
+        { title: '提案優化', desc: '協助優化專業行銷提案，爭取外部資源成功率。' }
       ]
     }
   ];
@@ -153,21 +154,21 @@ export default function App() {
     {
       label: 'Shuping.',
       title: 'The Pioneer · 0→1 開創者',
-      desc: '具備從零開始的開創精神。橫跨旅遊、商管與航海，善於運用數位工具與系統化方法，將繁瑣任務轉化為高效流程。',
+      desc: '具備從零開始的開創精神。橫跨旅遊、商管與航海,善於運用數位工具與系統化方法,將繁瑣任務轉化為高效流程。',
       color: 'amber',
       letter: 'u'
     },
     {
       label: 'Shopping.',
       title: 'The Empowering Partner · 賦能型協作者',
-      desc: '於大型零售電商建立可擴充的 SOP。我專注於「可複製的成功」，讓系統成為支撐組織穩定運作與知識傳承的根基。',
+      desc: '於大型零售電商建立可擴充的 SOP。我專注於「可複製的成功」,讓系統成為支撐組織穩定運作與知識傳承的根基。',
       color: 'emerald',
       letter: 'o'
     },
     {
       label: 'Shipping.',
       title: 'The Performer · 海上實踐者',
-      desc: '於極限環境執行任務，重視紀律與精確度。在 10 萬多噸級 LNG 船上，清楚的架構是守護營運安全的唯一防線。',
+      desc: '於極限環境執行任務,重視紀律與精確度。在 10 萬多噸級 LNG 船上,清楚的架構是守護營運安全的唯一防線。',
       color: 'blue',
       letter: 'i'
     }
@@ -223,11 +224,11 @@ export default function App() {
 
             <div className="reveal-item space-y-6 md:space-y-8 max-w-xl mb-12 md:mb-16">
               <p className="text-xl md:text-3xl font-black text-zinc-800 leading-[1.2] tracking-tight">
-                二十年跨界實踐，橫跨數位新創、大型零售與國際航運，<br className="hidden md:block"/>
+                二十年跨界實踐,橫跨數位新創、大型零售與國際航運,<br className="hidden md:block"/>
                 專注於將營運經驗轉化為在地可持續運作的制度與流程。
               </p>
               <p className="text-zinc-500 font-medium text-base md:text-lg leading-relaxed border-l-4 border-amber-500 pl-5 md:pl-6 py-1 md:py-2">
-                我致力於透過系統化架構解決複雜問題。透過協作，協助組織進行數位優化與技術移轉，核心始終在於將「效率」轉化為穩定的「專業影響力」。
+                我致力於透過系統化架構解決複雜問題。透過協作,協助組織進行數位優化與技術移轉,核心始終在於將「效率」轉化為穩定的「專業影響力」。
               </p>
             </div>
             
@@ -275,7 +276,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <SectionHeader 
             title="I am" 
-            subtitle="橫跨開創、營運與執行，將多維經驗整合為一套獨特的專業體系。"
+            subtitle="橫跨開創、營運與執行,將多維經驗整合為一套獨特的專業體系。"
             annotation="Identity"
           />
           
@@ -317,7 +318,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <SectionHeader 
             title="I work" 
-            subtitle="從數位新創、跨國零售到國際航運，始終如一的專業承諾。"
+            subtitle="從數位新創、跨國零售到國際航運,始終如一的專業承諾。"
             annotation="Experience"
           />
           <div className="grid gap-8 md:gap-10">
@@ -370,7 +371,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           <SectionHeader 
             title="I can" 
-            subtitle="將專業知識與營運經驗轉化為在地團隊可持續操作的資產。"
+            subtitle="將依據駐地需求,秉持「嵌入式夥伴」精神,提供以下具體服務。雖針對不同國家撰寫,但內容具備高度互補性,將視實際派駐情況彈性交叉運用。"
             dark
             annotation="Impact Strategy"
           />
@@ -400,13 +401,15 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
+                  <div className={`grid gap-6 md:gap-8 ${
+                    project.actions.length === 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
+                  }`}>
                     {project.actions.map((action, aIdx) => (
-                      <div key={aIdx} className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[4rem] border border-white/40 shadow-xl hover:translate-y-[-5px] transition-all duration-700 group/card flex flex-col">
-                        <h4 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 tracking-tight text-zinc-900 leading-tight">
+                      <div key={aIdx} className="bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] border border-white/40 shadow-xl hover:translate-y-[-5px] transition-all duration-700 group/card flex flex-col h-full">
+                        <h4 className="text-2xl md:text-2xl font-black mb-4 md:mb-6 tracking-tight text-zinc-900 leading-tight">
                           {action.title}
                         </h4>
-                        <p className="text-base md:text-lg font-medium leading-relaxed text-zinc-500 group-hover/card:text-zinc-800 transition-colors">
+                        <p className="text-base md:text-base font-medium leading-relaxed text-zinc-500 group-hover/card:text-zinc-800 transition-colors">
                           {action.desc}
                         </p>
                       </div>
