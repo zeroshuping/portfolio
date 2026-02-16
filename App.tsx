@@ -371,7 +371,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
           <SectionHeader 
             title="I can" 
-            subtitle="將依據駐地需求,秉持「嵌入式夥伴」精神,提供以下具體服務。雖針對不同國家撰寫,但內容具備高度互補性,將視實際派駐情況彈性交叉運用。"
+            subtitle="我將依據駐地需求，秉持『嵌入式夥伴』精神提供以下服務。本計畫係基於目前資訊之初步提案，我深知實務之複雜性，實際執行將以駐地實況為最高原則。我將優先深入盤點並續接在地現有流程 ，確保所有行動皆基於在地夥伴的共識，實現真正的技術落地與永續。以下模組具高度互補性，將視實際派駐情況彈性交叉運用。"
             dark
             annotation="Impact Strategy"
           />
