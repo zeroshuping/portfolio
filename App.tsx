@@ -341,9 +341,12 @@ export default function App() {
                <div className="h-1 w-12 bg-amber-500 mt-2"></div>
             </div>
 
-            <p className="text-2xl md:text-4xl font-bold text-zinc-800 leading-[1.4] tracking-tight text-pretty">
-              From Profit to Purpose: <span className="text-zinc-400">Transitioning from 20+ years of digital leadership, I bring a "Maritime Moat" of resilience forged as an LNG officer. My experience navigating professional isolation drives a deep commitment to supporting Mental Health & Wellbeing.</span>
-            </p>
+            <div className="space-y-4">
+              <h5 className="text-xl md:text-2xl font-black text-zinc-900 tracking-tight uppercase">From Profit to Purpose:</h5>
+              <p className="text-lg md:text-xl lg:text-2xl font-medium text-zinc-600 leading-relaxed text-pretty">
+                Transitioning from 20+ years of digital leadership, I bring a "Maritime Moat" of resilience forged as an LNG officer. My experience navigating professional isolation drives a deep commitment to supporting Mental Health & Wellbeing.
+              </p>
+            </div>
             
             <div className="grid md:grid-cols-2 gap-8 md:gap-16">
               <div className="p-8 md:p-12 bg-white rounded-[2.5rem] md:rounded-[3.5rem] paper-shadow border border-zinc-100">
