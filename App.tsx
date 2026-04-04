@@ -102,7 +102,7 @@ export default function App() {
     },
     { 
       role: 'Product Manager', 
-      org: 'ezTravel (易遊網)', 
+      org: 'EzTravel Online Travel Agent', 
       date: '2002 - 2006', 
       color: 'blue', 
       icon: <Presentation />,
@@ -149,7 +149,8 @@ export default function App() {
           <div className="hidden lg:flex items-center space-x-12 text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">
             {[
               { id: 'portfolio', label: 'I am' },
-              { id: 'timeline', label: 'I work' }
+              { id: 'timeline', label: 'I work' },
+              { id: 'mission', label: 'Mission' }
             ].map((item) => (
               <button key={item.id} onClick={() => scrollToId(item.id)} className="hover:text-amber-600 transition-colors relative group">
                 {item.label}
@@ -320,6 +321,44 @@ export default function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section id="mission" className="py-24 md:py-40 px-6 md:px-8 bg-zinc-50/50">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader 
+            title="Mission" 
+            annotation="Vision"
+          />
+          
+          <div className="reveal-item max-w-5xl space-y-8 md:space-y-12">
+            <div className="mb-8 md:mb-12">
+               <h4 className="text-2xl md:text-3xl font-black text-zinc-900 leading-tight mb-1 tracking-tight">
+                 Why IVF 2026
+               </h4>
+               <div className="h-1 w-12 bg-amber-500 mt-2"></div>
+            </div>
+
+            <p className="text-2xl md:text-4xl font-bold text-zinc-800 leading-[1.4] tracking-tight text-pretty">
+              I am transitioning from digital leadership and maritime service toward purpose-driven contribution. 
+              <span className="text-zinc-400"> Working in isolated, high-pressure environments has shaped my interest in Mental Health & Wellbeing.</span>
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+              <div className="p-8 md:p-12 bg-white rounded-[2.5rem] md:rounded-[3.5rem] paper-shadow border border-zinc-100">
+                <p className="text-lg md:text-xl lg:text-2xl font-medium text-zinc-600 leading-relaxed text-pretty">
+                  I bring practical experience in simplifying processes and supporting teams with sustainable, low-maintenance solutions.
+                </p>
+              </div>
+              
+              <div className="p-8 md:p-12 bg-amber-50/50 rounded-[2.5rem] md:rounded-[3.5rem] border border-amber-100">
+                <p className="text-lg md:text-xl lg:text-2xl font-medium text-amber-900/70 leading-relaxed text-pretty">
+                  As I will already be in Budapest, I have arranged my own travel and accommodation. I hope this allows resources to support other participants, while I fully engage in the forum’s sessions, workshops, and exchange opportunities.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
