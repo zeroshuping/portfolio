@@ -342,14 +342,14 @@ export default function App() {
             </div>
 
             <p className="text-2xl md:text-4xl font-bold text-zinc-800 leading-[1.4] tracking-tight text-pretty">
-              I am transitioning from digital leadership and maritime service toward purpose-driven contribution. 
-              <span className="text-zinc-400"> Working in isolated, high-pressure environments has shaped my interest in Mental Health & Wellbeing.</span>
+              From Profit to Purpose: <span className="text-zinc-400">Transitioning from 20+ years of digital leadership, I bring a "Maritime Moat" of resilience forged as an LNG officer. My experience navigating professional isolation drives a deep commitment to supporting Mental Health & Wellbeing.</span>
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 md:gap-16">
               <div className="p-8 md:p-12 bg-white rounded-[2.5rem] md:rounded-[3.5rem] paper-shadow border border-zinc-100">
+                <h5 className="text-xl md:text-2xl font-black text-zinc-900 mb-4 tracking-tight uppercase">Legacy through Digital Assets</h5>
                 <p className="text-lg md:text-xl lg:text-2xl font-medium text-zinc-600 leading-relaxed text-pretty">
-                  I bring practical experience in simplifying processes and supporting teams with sustainable, low-maintenance solutions.
+                  I specialize in providing "Burden Relief" by co-creating Permanent Digital Assets—sustainable, low-maintenance workflows that ensure long-term community autonomy long after the forum ends.
                 </p>
               </div>
               
