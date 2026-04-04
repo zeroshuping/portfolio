@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Rocket, Navigation, Globe2, ChevronDown, 
-  Users, Zap, CheckCircle2,
-  Anchor, Compass, ShoppingCart, ChevronRight,
-  ShieldCheck, BarChart3, Presentation, Heart,
-  Flame, Target, Settings, BrainCircuit, Activity, Layers,
-  Smile, Quote, MapPin, Award, Mail, Briefcase,
-  Terminal, BarChart, Globe
+  Rocket, ChevronDown, 
+  CheckCircle2,
+  Anchor, ShoppingCart, 
+  Presentation, Mail
 } from 'lucide-react';
 
 // --- Sub-components ---
@@ -22,9 +19,9 @@ const SectionHeader: React.FC<{ title: string; subtitle?: string; dark?: boolean
       )}
     </div>
     <div className="relative inline-block">
-      <h2 className={`text-5xl sm:text-6xl md:text-[8rem] font-black mb-6 tracking-tighter leading-none ${dark ? 'text-white' : 'text-zinc-900'}`}>{title}</h2>
+      <h2 className={`text-5xl sm:text-6xl md:text-[8rem] font-black mb-8 tracking-tighter leading-none ${dark ? 'text-white' : 'text-zinc-900'}`}>{title}</h2>
     </div>
-    {subtitle && <p className={`text-base md:text-xl max-w-3xl font-medium leading-relaxed opacity-80 ${dark ? 'text-zinc-300' : 'text-zinc-600'}`}>{subtitle}</p>}
+    {subtitle && <p className={`text-lg md:text-2xl max-w-4xl font-medium leading-relaxed text-pretty ${dark ? 'text-zinc-300' : 'text-zinc-500'}`}>{subtitle}</p>}
   </div>
 );
 
@@ -37,7 +34,27 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.05 });
+
+    const revealElements = document.querySelectorAll('section, .reveal-item');
+    revealElements.forEach(el => {
+      if (!el.classList.contains('reveal')) {
+        el.classList.add('reveal');
+      }
+      observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      revealElements.forEach(el => observer.unobserve(el));
+    };
   }, []);
 
   const scrollToId = (id: string) => {
@@ -49,103 +66,50 @@ export default function App() {
 
   const careerData = [
     { 
-      role: '船副 (Officer)', 
-      org: 'LNG 天然氣船', 
+      role: 'Deck Officer', 
+      org: 'LNG Vessel', 
       date: '2022 - PRESENT', 
       color: 'blue', 
       icon: <Anchor />,
       details: [
-        '負責 10 萬多噸級 LNG 船之航行安全、貨物裝卸作業監控與風險控管。',
-        '於跨文化與資源受限環境中,確保標準流程 (SOP)真正落地生根。',
-        '具備國際海事法規、跨國溝通協作與高壓力環境決策能力。'
+        'Managed navigation safety, cargo operations, and risk for 100,000-ton LNG vessels.',
+        'Institutionalized sustainable workflows within multicultural, resource-limited environments.',
+        'Expert in maritime law, global collaboration, and high-pressure decision-making.'
       ]
     },
     { 
-      role: '電商部門經理', 
+      role: 'e-Commerce manager', 
       org: 'Costco Taiwan', 
       date: '2017 - 2022', 
       color: 'emerald', 
       icon: <ShoppingCart />,
       details: [
-        '負責官方網站整體營運,建立數位行銷、內容產出與營運標準化流程。',
-        '管理商品生命週期與平台效能,顯著提升營運效率與轉換率。',
-        '數位化績效追蹤體系,將繁雜的零售數據轉化為可執行之商業決策。'
+        'Standardized site operations, marketing, and content workflows.',
+        'Optimized product lifecycles and platform performance to boost efficiency and conversion.',
+        'Transformed complex retail data into actionable business decisions through digital tracking.'
       ]
     },
     { 
-      role: '共同創辦人', 
-      org: 'FunTime 旅遊比價平台', 
-      date: '2008 - 2017', 
+      role: 'Co-founder', 
+      org: 'FunTime travel meta search site', 
+      date: '2007 - 2017', 
       color: 'amber', 
       icon: <Rocket />,
       details: [
-        '從 0 到 1 打造全台領先的旅遊搜尋服務,橫跨產品規劃、技術研發與市場商務擴展。',
-        '建立橫跨技術、產品與營運的溝通橋樑,落實使用者導向之數位轉型策略。'
+        'Built Taiwan’s leading travel search from 0→1, scaling product, tech, and market expansion.',
+        'Bridged tech, product, and operations to drive user-centric digital transformation'
       ]
     },
     { 
-      role: '顧問', 
-      org: '意藍科技 (Eland Tech)', 
-      date: '2006 - 2008', 
-      color: 'slate', 
-      icon: <Briefcase />,
-      details: [
-        '協助市場開發、客製化系統規劃與編寫產品技術文件。'
-      ]
-    },
-    { 
-      role: '產品經理', 
+      role: 'Product Manager', 
       org: 'ezTravel (易遊網)', 
       date: '2002 - 2006', 
       color: 'blue', 
       icon: <Presentation />,
       details: [
-        '負責旅遊產品線開發與銷售策略。',
-        '導入 ERP 系統,優化團隊協作效能並提升產能。',
-        '長期與政府共辦觀光活動,提供總經理產業分析與輿情。'
-      ]
-    }
-  ];
-
-  const impactProjects = [
-    {
-      country: 'Kyrgyzstan',
-      title: '吉爾吉斯計畫',
-      tagline: '數位行銷與文獻保存',
-      description: '將「標準化 × 以人為本 × 效率」轉化為在地服務的具體行動',
-      color: 'amber',
-      icon: <Smile />,
-      actions: [
-        { title: '文獻數位化與歸檔', desc: '運用 NotebookLM 與 OCR 技術，協助在地文史資料數位資產化，建立易維護的分類邏輯與雲端結構。' },
-        { title: '品牌故事與 Canva 賦能', desc: '建立品牌視覺庫,可重複使用版型與內容公式，降低行銷門檻，確保「家扶小舖」品牌產出一致性。' },
-        { title: '社群經營與自主管理', desc: '使用 Meta Business Suite 建立排程與數據追蹤。透過陪同實作建立營運 SOP，賦能團隊獨立運作能力。' },
-        { title: '虛實整合 (O2O) 策展策略', desc: '發揮 Costco O2O 整合經驗，規劃實體展，將 15 週年史料轉化為社群故事，流量導引至產品購買。' }
-      ]
-    },
-    {
-      country: 'Belize',
-      title: '貝里斯計畫',
-      tagline: '決策支援與數據優化 。',
-      description: '將「需求轉譯 × 數據賦能 × 知識留存」轉化為減輕團隊負擔的後勤支援。。',
-      color: 'emerald',
-      icon: <Terminal />,
-      actions: [
-        { title: '需求轉譯 RA Support', desc: '將模糊需求轉化為清晰功能規格,極小化溝通與開發成本。' },
-        { title: '數據賦能 Dashboard', desc: '協同建置自動化儀表板,將營運數據轉化為透明可視的決策工具。' },
-        { title: '知識留存與 SOP', desc: '撰寫使用者手冊與 SOP,確保系統知識不因人員異動而斷層。' }
-      ]
-    },
-    {
-      country: 'Indonesia',
-      title: '印尼計畫',
-      tagline: '市場策略與品牌發展。',
-      description: '將「利基挖掘 × 標竿學習 × 提案優化」轉化為社區產業的實質成長動能。',
-      color: 'blue',
-      icon: <Globe />,
-      actions: [
-        { title: '利基挖掘', desc: '透過數據與Google Trends分析，協助找出產品的差異化競爭優勢。' },
-        { title: '跨國標竿學習', desc: '研究在其他國家分會的成功社區營造案例，進行 「在地化 」 改良應用。' },
-        { title: '提案優化', desc: '協助優化專業行銷提案，爭取外部資源成功率。' }
+        'Led travel product development and sales strategy.',
+        'Deployed ERP systems to streamline collaboration, boosting productivity by 60%.',
+        'Partnered with government for tourism growth and provided executive industry insights.'
       ]
     }
   ];
@@ -153,22 +117,22 @@ export default function App() {
   const pillarData = [
     {
       label: 'Shuping.',
-      title: 'The Pioneer · 0→1 開創者',
-      desc: '具備從零開始的開創精神。橫跨旅遊、商管與航海,善於運用數位工具與系統化方法,將繁瑣任務轉化為高效流程。',
+      title: '0→1 Pioneer',
+      desc: 'Bridging tourism, business, and seafaring. I streamline complex tasks into high-efficiency digital workflows',
       color: 'amber',
       letter: 'u'
     },
     {
       label: 'Shopping.',
-      title: 'The Empowering Partner · 賦能型協作者',
-      desc: '於大型零售電商建立可擴充的 SOP。我專注於「可複製的成功」,讓系統成為支撐組織穩定運作與知識傳承的根基。',
+      title: 'The Empowering Partner',
+      desc: 'Established scalable retail workflows for repeatable success and institutional knowledge continuity.',
       color: 'emerald',
       letter: 'o'
     },
     {
       label: 'Shipping.',
-      title: 'The Performer · 海上實踐者',
-      desc: '於極限環境執行任務,重視紀律與精確度。在 10 萬多噸級 LNG 船上,清楚的架構是守護營運安全的唯一防線。',
+      title: 'The Navigator',
+      desc: 'Disciplined execution in extreme environments. On a 100,000-ton LNG ship, clear structure is the ultimate line of defense for safety.',
       color: 'blue',
       letter: 'i'
     }
@@ -185,8 +149,7 @@ export default function App() {
           <div className="hidden lg:flex items-center space-x-12 text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">
             {[
               { id: 'portfolio', label: 'I am' },
-              { id: 'timeline', label: 'I work' },
-              { id: 'blueprint', label: 'I can' }
+              { id: 'timeline', label: 'I work' }
             ].map((item) => (
               <button key={item.id} onClick={() => scrollToId(item.id)} className="hover:text-amber-600 transition-colors relative group">
                 {item.label}
@@ -222,13 +185,10 @@ export default function App() {
               </div>
             </h1>
 
-            <div className="reveal-item space-y-6 md:space-y-8 max-w-xl mb-12 md:mb-16">
-              <p className="text-xl md:text-3xl font-black text-zinc-800 leading-[1.2] tracking-tight">
-                二十年跨界實踐,橫跨數位新創、大型零售與國際航運,<br className="hidden md:block"/>
-                專注於將營運經驗轉化為在地可持續運作的制度與流程。
-              </p>
-              <p className="text-zinc-500 font-medium text-base md:text-lg leading-relaxed border-l-4 border-amber-500 pl-5 md:pl-6 py-1 md:py-2">
-                我致力於透過系統化架構解決複雜問題。透過協作,協助組織進行數位優化與技術移轉,核心始終在於將「效率」轉化為穩定的「專業影響力」。
+            <div className="reveal-item space-y-6 md:space-y-8 max-w-2xl mb-12 md:mb-16">
+              <p className="text-xl md:text-3xl font-bold text-zinc-700 leading-[1.3] tracking-tight text-pretty">
+                The Navigator: 20+ years of operations leadership in digital tech and maritime shipping.<br /> 
+                <span className="text-zinc-400 font-medium">I transform professional experience into sustainable, localized systems.</span>
               </p>
             </div>
             
@@ -276,7 +236,6 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <SectionHeader 
             title="I am" 
-            subtitle="橫跨開創、營運與執行,將多維經驗整合為一套獨特的專業體系。"
             annotation="Identity"
           />
           
@@ -303,7 +262,7 @@ export default function App() {
                     </h4>
                   </div>
 
-                  <p className="text-base md:text-xl font-medium text-zinc-500 leading-relaxed pl-4 border-l-4 border-zinc-100 group-hover:border-zinc-200 transition-colors">
+                  <p className="text-lg md:text-xl lg:text-2xl font-medium text-zinc-500 leading-relaxed pl-6 border-l-4 border-zinc-100 group-hover:border-zinc-200 transition-colors text-pretty">
                     {item.desc}
                   </p>
                 </div>
@@ -314,11 +273,10 @@ export default function App() {
       </section>
 
       {/* Timeline Section - I WORK */}
-      <section id="timeline" className="py-24 md:py-40 px-6 md:px-8 bg-zinc-50/50">
+      <section id="timeline" className="py-24 md:py-40 px-6 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionHeader 
             title="I work" 
-            subtitle="從數位新創、跨國零售到國際航運,始終如一的專業承諾。"
             annotation="Experience"
           />
           <div className="grid gap-8 md:gap-10">
@@ -349,68 +307,12 @@ export default function App() {
                     </span>
                   </div>
 
-                  <div className="grid gap-4 md:gap-5">
+                  <div className="grid gap-5 md:gap-6">
                     {item.details.map((detail, dIdx) => (
-                      <div key={dIdx} className="flex items-start gap-4 md:gap-5 p-5 md:p-8 bg-zinc-50/50 rounded-3xl group-hover:bg-white transition-all shadow-sm group-hover:shadow-md border border-zinc-100/50">
+                      <div key={dIdx} className="flex items-start gap-5 md:gap-6 p-6 md:p-10 bg-zinc-50/50 rounded-[2rem] md:rounded-[3rem] group-hover:bg-white transition-all shadow-sm group-hover:shadow-md border border-zinc-100/50">
                         <CheckCircle2 size={24} className="text-amber-500 mt-1 shrink-0" />
-                        <p className="text-zinc-800 font-bold leading-snug text-lg md:text-2xl tracking-tight">
+                        <p className="text-zinc-700 font-semibold leading-relaxed text-lg md:text-xl lg:text-2xl tracking-tight text-pretty">
                           {detail}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Section - I CAN */}
-      <section id="blueprint" className="py-24 md:py-40 bg-zinc-900 text-white overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
-          <SectionHeader 
-            title="I can" 
-            subtitle="我將依據駐地需求，秉持『嵌入式夥伴』精神提供以下服務。本計畫係基於目前資訊之初步提案，我深知實務之複雜性，實際執行將以駐地實況為最高原則。我將優先深入盤點並續接在地現有流程 ，確保所有行動皆基於在地夥伴的共識，實現真正的技術落地與永續。以下模組具高度互補性，將視實際派駐情況彈性交叉運用。"
-            dark
-            annotation="Impact Strategy"
-          />
-          
-          <div className="grid gap-20 md:gap-32">
-            {impactProjects.map((project, idx) => (
-              <div key={idx} className={`reveal-item ${
-                project.color === 'amber' ? 'bg-amber-500' : 
-                project.color === 'emerald' ? 'bg-emerald-500' : 'bg-blue-600'
-              } rounded-[3rem] md:rounded-[5rem] px-6 py-12 md:p-24 text-zinc-900 overflow-hidden relative group shadow-2xl`}>
-                <div className="absolute top-0 right-0 p-8 md:p-16 opacity-5 group-hover:rotate-12 transition-transform duration-1000">
-                  {React.cloneElement(project.icon as React.ReactElement<any>, { className: "w-64 h-64 md:w-[400px] md:h-[400px]", strokeWidth: 1 })}
-                </div>
-                
-                <div className="relative z-10">
-                  <div className="max-w-5xl mb-12 md:mb-16">
-                    <h3 className="text-4xl md:text-8xl font-black tracking-tighter leading-[1] mb-8 md:mb-12">
-                      {project.title}
-                    </h3>
-                    <div className="space-y-6">
-                      <p className="text-xl md:text-3xl font-black opacity-90 leading-tight">
-                        {project.tagline}
-                      </p>
-                      <p className="text-lg md:text-2xl font-bold opacity-80 leading-relaxed italic border-l-4 border-zinc-900 pl-4 md:pl-6 py-1 md:py-2">
-                        {project.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className={`grid gap-6 md:gap-8 ${
-                    project.actions.length === 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
-                  }`}>
-                    {project.actions.map((action, aIdx) => (
-                      <div key={aIdx} className="bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] border border-white/40 shadow-xl hover:translate-y-[-5px] transition-all duration-700 group/card flex flex-col h-full">
-                        <h4 className="text-2xl md:text-2xl font-black mb-4 md:mb-6 tracking-tight text-zinc-900 leading-tight">
-                          {action.title}
-                        </h4>
-                        <p className="text-base md:text-base font-medium leading-relaxed text-zinc-500 group-hover/card:text-zinc-800 transition-colors">
-                          {action.desc}
                         </p>
                       </div>
                     ))}
