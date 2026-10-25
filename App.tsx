@@ -325,7 +325,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Mission Section */} 
+      {/*
       <section id="mission" className="py-24 md:py-40 px-6 md:px-8 bg-zinc-50/50">
         <div className="max-w-7xl mx-auto">
           <SectionHeader 
@@ -365,7 +366,7 @@ export default function App() {
           </div>
         </div>
       </section>
-
+*/}
       {/* Final Contact Section */}
       <section id="contact" className="py-24 md:py-40 px-6 md:px-8 text-center bg-white relative overflow-hidden">
         <div className="reveal-item max-w-6xl mx-auto bg-zinc-50 p-10 md:p-24 rounded-[3.5rem] md:rounded-[6rem] paper-shadow border border-zinc-100 group relative">
